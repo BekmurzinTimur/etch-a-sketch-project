@@ -16,6 +16,7 @@ function changeColor(element, newColor) {
 }
 
 function resetBoard(newCellsNumber) {
+    cellsNumber = newCellsNumber;
     //Delete all childs 
     while (container_inner.firstChild) {
         container_inner.removeChild(container_inner.firstChild);
@@ -40,5 +41,5 @@ function resetBoard(newCellsNumber) {
 // if (resetButton !== null)  
     const resetButton = document.getElementById("resetButton");
     resetButton.addEventListener('click', () => {
-        resetBoard(+prompt('Number of cells in row/column?', 16));
+        resetBoard(+prompt('Number of cells in row/column?', cellsNumber));
     });
